@@ -182,7 +182,7 @@ $ligne = 0;
     $ligne += 1; //fonctionne aussi comme ça : $ligne ++;
   }
 
-  // FOR. La variable est dans la fonction !!!
+  // Boucle FOR. La variable est dans la fonction !!!
   // ON utilise FOR quand on sait combien de fois on veut faire tourner la boucle. Sinon on utilise WHILE
 
 
@@ -190,7 +190,7 @@ $ligne = 0;
     echo "voilà le numero de ligne " .($ligneFor+1). " Badaboum <br/>";
   }
 
-  // FOREACH. Utile pour les tableaux
+  // Boucle FOREACH. Utile pour les tableaux
 
 $userForEach = array('Pierre', 'Paul', 'Jack', 'Michel', 'Fred');
   for ($i = 0; $i < 5; $i++) {
@@ -200,5 +200,37 @@ $userForEach = array('Pierre', 'Paul', 'Jack', 'Michel', 'Fred');
   //   echo "Voici le prenom :" .$userForEach. "<br/>";
   // }
 
+  foreach ($userForEach as $prenomTab) {
+    echo "Encore le prenom ". $prenomTab."<br/>";
+  }
+
+  $Fred = array(
+    'prenom' => 'Fred',
+    'Nom' => 'Mendes',
+    'age' => '40'
+  );
+
+    foreach ($Fred as $tableauFred) {
+      echo "données du tableau : ". $tableauFred ."<br/>";
+    }
+
+
+    // BOUCLE DO WHILE. Moins utilisée que les autres
+  $boucleDoWhile = 12;
+
+  do {
+    echo 'Nombre est égal à : '.$boucleDoWhile.'<br/>';
+    $boucleDoWhile++;
+  } while ($boucleDoWhile < 10);
+
+
+  // BOUCLES IMBRIQUEES
+
+  for ($i=0; $i < 5 ; $i++) {
+      for ($j=0; $j <= 5 ; $j++) {
+        echo $i*$j;
+      };
+      echo "<br/>";
+  }
 
 ?>
