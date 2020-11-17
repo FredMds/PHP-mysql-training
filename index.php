@@ -86,13 +86,13 @@ un autre commentaire avec de fermer le multiligne
   $age = 18;
 
     if ($age==18) {
-      echo "Vous êtes tout juste majeur";
+      echo "Vous êtes tout juste majeur<br>";
     }
     if ($age>18) {
-      echo "Vous êtes un grand";
+      echo "Vous êtes un grand<br>";
     }
     else {
-      echo "Vous êtes mineur";
+      echo "Vous êtes mineur<br>";
     };
     // ne pas utiliser = mais == si on veut comparer la valeurs
 
