@@ -1,4 +1,3 @@
-
 <?php
 // commentaire uniligne
 /* Commentaire multi mutiligne
@@ -12,10 +11,7 @@ un autre commentaire avec de fermer le multiligne
   echo $age_du_lyceen;
 
 
-
-
-
-    //afficher les guilllemets dans chaine de caracteres. S'il y a des guillements dans la chaine, utiliser \
+    //afficher les guillemets dans chaine de caracteres. S'il y a des guillements dans la chaine, utiliser \
 
       $guillemets = '"j\'aime les guillemets<br>"';
       echo $guillemets;
@@ -35,7 +31,7 @@ un autre commentaire avec de fermer le multiligne
 
   echo $direBonjour.' '.$pays.', Tu vas bien ?<br>';
 
-// OPERATEURS MATHEMATQUES
+// OPERATEURS MATHEMATIQUES
   /*
     multiplier => *
     addition => +
@@ -86,13 +82,13 @@ un autre commentaire avec de fermer le multiligne
   $age = 18;
 
     if ($age==18) {
-      echo "Vous êtes tout juste majeur";
+      echo "Vous êtes tout juste majeur<br>";
     }
     if ($age>18) {
-      echo "Vous êtes un grand";
+      echo "Vous êtes un grand<br>";
     }
     else {
-      echo "Vous êtes mineur";
+      echo "Vous êtes mineur<br>";
     };
     // ne pas utiliser = mais == si on veut comparer la valeurs
 
@@ -106,12 +102,99 @@ un autre commentaire avec de fermer le multiligne
   */
 
 // LES CONDITIONS MULTIPLES
+/* On peut utiliser AND ou &&
+    Si on ne souhaite qu'un seule des conditions, on utilise OR ou ||
+*/
 
-  $pseudo = "toto";
+  $pseudo = "titi";
   $mdp    = "tata";
 
-  if (condition) {
-    echo "Mot de passe valide !"
+  if ($pseudo == "toto" AND $mdp == "tata") {
+    echo "Mot de passe valide !<br>";
   }
+
+// CONDITIONS TERNAIRES
+$number = 1;
+echo ($number % 10 == 0) ? "true" : "false";
+
+
+// EXERCICE MOT DE PASSE INVALIDE
+
+$pseudo = "John";
+$mdp    = "Doe";
+
+  if ($pseudo == "John" AND $mdp == "Doe") {
+    echo "Mot de passe valide !<br>";
+  }
+
+  else {
+    echo "Mot de passe invalide !!!<br>";
+  }
+
+// IF ELSE IF else
+/*Utiliser else if pour rajouter une condition
+*/
+
+  $monAge = 17;
+  if ($monAge > 18) {
+    echo "Vous êtes majeur";
+  } else if ($monAge ==18) {
+    echo "Pile poil dans l'âge";
+  } else {
+    echo "Vous êtes mineur";
+  }
+
+
+// LES SWITCHS, un autre type de conditions pour tester les égalités
+
+// $noteExam = 15;
+//   switch ($noteExam) {
+//     case '20':
+//       echo "Parfait, tu as eu 20";
+//       break;
+//     case '19':
+//       echo "Excellent, tu as eu 19";
+//       break;
+//     default:
+//       echo "C'est une note moyenne<br>";
+//       break;
+//   }
+
+//CONDTIONS SIMPLES. On peut retirer les accolades
+
+$sexe = "Garçon";
+  if ($sexe == "Garçon")
+    echo "tu es un garçon<br>";
+  else
+    echo "tu es une fille<br>";
+
+// LES BOUCLES WHILE FOR FOREACH DO WHILE
+  // WHILE
+
+$ligne = 0;
+
+  while ($ligne <= 10) {
+    echo "c'est la ligne ".($ligne+1).", oh yeah<br>";
+    $ligne += 1; //fonctionne aussi comme ça : $ligne ++;
+  }
+
+  // FOR. La variable est dans la fonction !!!
+  // ON utilise FOR quand on sait combien de fois on veut faire tourner la boucle. Sinon on utilise WHILE
+
+
+  for ($ligneFor=0; $ligneFor < 10; $ligneFor++) {
+    echo "voilà le numero de ligne " .($ligneFor+1). " Badaboum <br/>";
+  }
+
+  // FOREACH. Utile pour les tableaux
+
+$userForEach = array('Pierre', 'Paul', 'Jack', 'Michel', 'Fred');
+  for ($i = 0; $i < 5; $i++) {
+    echo "Voilà le prenom ". $userForEach[$i] ."<br/>";
+  }
+  // while ($userForEach < 10) {
+  //   echo "Voici le prenom :" .$userForEach. "<br/>";
+  // }
+
 
 ?>
