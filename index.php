@@ -1,4 +1,3 @@
-
 <?php
 // commentaire uniligne
 /* Commentaire multi mutiligne
@@ -12,10 +11,7 @@ un autre commentaire avec de fermer le multiligne
   echo $age_du_lyceen;
 
 
-
-
-
-    //afficher les guilllemets dans chaine de caracteres. S'il y a des guillements dans la chaine, utiliser \
+    //afficher les guillemets dans chaine de caracteres. S'il y a des guillements dans la chaine, utiliser \
 
       $guillemets = '"j\'aime les guillemets<br>"';
       echo $guillemets;
