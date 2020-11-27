@@ -36,12 +36,12 @@ un autre commentaire avec de fermer le multiligne
   echo $direBonjour.' '.$pays.', Tu vas bien ?<br>';
 
 // OPERATEURS MATHEMATIQUES
-  /*
+
     multiplier => *
     addition => +
     soustraire => -
     diviser => /
-  */
+
 
     //Methode simple
     $premierNombre = 5;
@@ -103,7 +103,7 @@ un autre commentaire avec de fermer le multiligne
     <= =>  est inferieur ou Egal
     >= =>  est superieur ou egal
     != =>  est different de
-  */
+*/
 
 // LES CONDITIONS MULTIPLES
 /* On peut utiliser AND ou &&
@@ -136,8 +136,8 @@ $mdp    = "Doe";
   }
 
 // IF ELSE IF else
-/*Utiliser else if pour rajouter une condition
-*/
+//Utiliser else if pour rajouter une condition
+
 
   $monAge = 17;
   if ($monAge > 18) {
@@ -232,5 +232,131 @@ $userForEach = array('Pierre', 'Paul', 'Jack', 'Michel', 'Fred');
       };
       echo "<br/>";
   }
+
+// Les FONCTIONS
+//Pour éviter de réécrire du code à chaque fois qu'on a besoin d'un algorythme
+
+
+  function Bonjour() {
+    echo "Bonjour, comment allez-vous ? </br>";
+  }
+
+  Bonjour();
+  Bonjour();
+  Bonjour();
+  Bonjour();
+
+  function BonjourNom($prenom, $nom) {
+      echo "Salut " .$prenom. " " .$nom. "</br>";
+  }
+
+  BonjourNom("Pierre", "Perret");
+// Dans cet exemple la fonction BonjourNom attend 2 arguments. Il faut absolument appeler les 2 sinon le code plante
+
+// Fonction qui retourne une valeur. Utiliser return
+
+  function Formule($x, $y) {
+    $temp = $x + $y;
+    $temp = $temp * $y;
+
+    return $temp;
+  }
+
+  $resultat = Formule (5, 10);
+
+  echo $resultat. "</br>";
+
+// Exercice sur les FONCTIONS. Calcul des racines d'une equation du second degré
+
+  function racines($a, $b, $c){
+
+    if ($a==0){
+      echo "Cette équation est invalide ! </br>";
+      exit;
+    }
+    // DELTA
+    $delta = $b*$b - (4*$a*$c);
+
+    if ($delta < 0){
+      echo "il n'y a pas de solution à cette équation ! </br>";
+    }
+    else if ($delta == 0){
+      $result = -$b/(2*$a);
+      echo "il y a une solution : " .$result. "</br>";
+    }
+    else if ($delta > 0){
+      $racineA = (-$b - sqrt($delta))/(2*$a);
+      $racineB = (-$b + sqrt($delta))/(2*$a);
+
+      echo "Il y a deux solutions, x1 = " .$racineA. " et x2= " .$racineB. "</br>";
+    }
+  };
+
+    racines (6, 7, 1);
+
+// FONCTIONS NATIVES DE PHP POUR LES STRINGS
+
+    $string = "Salut et bienvenu sur cette section";
+    // STRLEN
+    echo "nombre de caractères : " .strlen($string). "</br>";
+
+    // STR_REPLACE
+    echo "on change la phrase : " .STR_REPLACE('Salut', 'Hello', $string). "</br>";
+
+    // STRTOLOWER
+    echo "en minuscule : " .STRTOLOWER($string). "</br>";
+
+    // STRTOUPPER
+    echo "en majuscule : " .STRTOUPPER($string). "</br>";
+
+    // SUBSTR
+    echo SUBSTR($string, 0, 5). "</br>";
+
+// FONCTIONS NATIVES DE PHP POUR LES CALCULS
+
+    //ABS, valeur absolue
+    echo abs(-5)."</br>";
+
+    // max et min
+    echo max(4, 7, 8, 20, 15)."</br>";
+    echo min(4, 7, 8, 20, 15)."</br>";
+
+    // rand pour du random. Laisser vide pour avoir un nombre au hasard
+    echo rand()."</br>";
+
+    // round. Pour arrondir
+    echo round(14.15986523, 2). "</br>";
+
+// FONCTIONS NATIVES DE PHP POUR LES TABLEAUX
+  // array_flip
+    $tableau = array("Pierre", "Paul", "Jacques");
+    $tableauDeux = array_flip($tableau); //on créé un 2eme tableau qui renverse les données
+    echo $tableauDeux["Pierre"]."</br>";
+
+    // array_key_exists
+    if(array_key_exists(1, $tableau)){
+      echo "Cet indice existe"."</br>";
+    }
+    else {
+      echo "Cet indice n'existe pas"."</br>";
+    }
+
+    // Count
+    echo count($tableau);
+
+    // sort
+    sort($tableau);
+    foreach($tableau as $nom) {
+      echo $nom."</br>";
+    }
+
+// FONCTION INCLUDE. Permet de recuperer des blocs de texte (header par exemple) et de les appeler n'importe où :
+/*
+    <?php include (adresse du fichier) ?> affiche la page, que le fichier existe ou non
+    <?php require (adresse du fichier) ?> permet de ne pas afficher le reste de la page si ce bloc manque ou est en anomalie
+    <?php require_once ou include_once (adresse du fichier) ?> permet de n'afficher le fichier qu'une seule fois
+*/
+
+
 
 ?>
